@@ -74,3 +74,18 @@ et le point - en bas à droite (x2, y2).
 `strokeRect` dessinera les contours et `fillRect` remplira le rectangle.
 
 
+### arc
+
+```javascript
+ctx.arc(x, y, rayon, angled, anglea, Boolean sensHoraire);
+```
+
+Permet de dessiner des arcs (et donc des cercles), avec les arguments suivants:
+* x: position "x" du centre
+* y: position "y" du centre
+* angled: début de l'arc, en radian
+* anglea: fin de l'arc, en radian
+* sensHoraire: sens de l'arc
+
+**Note :** le placement du centre agis comme un "moveTo", vous devez donc
+définir un chemin pour avoir un rendu correct lors de la définition de plusieurs arcs.
