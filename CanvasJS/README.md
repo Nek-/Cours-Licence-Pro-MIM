@@ -60,3 +60,10 @@ ctx.fillStyle = 'red';
 
 La propriété fillStyle est utilisé lors de l'appel de la commande "fill" pour
 définir la couleur de dessin.
+
+### fillRect & storkeRect
+
+```javascript
+ctx.strokeRect(x1, y1, x2, y2);
+ctx.fillRect(x1, y1, x2, y2);
+```
