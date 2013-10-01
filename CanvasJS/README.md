@@ -67,3 +67,10 @@ définir la couleur de dessin.
 ctx.strokeRect(x1, y1, x2, y2);
 ctx.fillRect(x1, y1, x2, y2);
 ```
+
+Créé des rectangles entre le point - en haut à gauche sur le rectangle - (x1, y1)
+et le point - en bas à droite (x2, y2).
+
+`strokeRect` dessinera les contours et `fillRect` remplira le rectangle.
+
+
