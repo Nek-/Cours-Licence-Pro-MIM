@@ -35,6 +35,15 @@ ctx.stroke();
 
 Dessine le contour d'un chemin défini.
 
+#### Possibilité de changer la couleur
+
+```javascript
+ctx.strokeStyle = 'red';
+```
+
+La propriété strokeStyle est utilisé lors de l'appel de la commande "stroke" pour
+définir la couleur de dessin.
+
 ### Fill
 
 ```javascript
@@ -42,3 +51,12 @@ ctx.fill();
 ```
 
 Rempli le chemin défini.
+
+#### Possibilité de changer la couleur
+
+```javascript
+ctx.fillStyle = 'red';
+```
+
+La propriété fillStyle est utilisé lors de l'appel de la commande "fill" pour
+définir la couleur de dessin.
