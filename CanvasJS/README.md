@@ -2,6 +2,16 @@ La balise canvas
 ================
 Par Jérôme LANDRE
 
+Ordre
+-----
+
+Les fichiers ont étés écris dans cet ordre (je recommande évidemment de les
+lire/tester dans le même ordre).
+
+1. main.js
+2. rect.js
+3. circles.js
+4. image.js
 
 API
 ---
@@ -89,3 +99,26 @@ Permet de dessiner des arcs (et donc des cercles), avec les arguments suivants:
 
 **Note :** le placement du centre agis comme un "moveTo", vous devez donc
 définir un chemin pour avoir un rendu correct lors de la définition de plusieurs arcs.
+
+### drawImage
+
+```
+ctx.drawImage(image, x, y);
+```
+
+La méthode drawImage permet de dessiner des images dans votre canvas.
+Cette image doit être sous la forme d'un objet JS "Image". Les arguments sont
+les suivants:
+* image: un objet "Image" javascript
+* x: position "x" de l'image (par rapport au haut du canvas)
+* y: position "y" de l'image (par rapport à la gauche du canvas)
+
+#### Exemple
+
+```
+var img = new Image();
+img.onload = function() {
+    ctx.drawImage(img, 0, 0);
+}
+img.src = 'images/coquelicot.png';
+```
