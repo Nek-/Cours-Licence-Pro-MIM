@@ -2,8 +2,8 @@ La balise canvas
 ================
 Par Jérôme LANDRE
 
-Ordre
------
+Ordre des fichiers à tester
+---------------------------
 
 Les fichiers ont étés écris dans cet ordre (je recommande évidemment de les
 lire/tester dans le même ordre).
@@ -12,6 +12,16 @@ lire/tester dans le même ordre).
 2. rect.js
 3. circles.js
 4. image.js
+
+Accès aux pixels des images
+---------------------------
+
+Nous pouvons récupérer un tableau à une dimention qui représente tous les pixels
+du canvas (même si notre image ne prend pas toute la place du canvas).
+Chaque pixel est décrit par 4 cases (4 octets) dans le tableau: R G B A (respectivement
+Red Green Blue Alpha).
+
+
 
 API
 ---

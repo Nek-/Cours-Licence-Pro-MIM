@@ -43,6 +43,6 @@ img.onload = function() {
         );
     }
 //*/
-}
+};
 
 img.src = 'images/coquelicot.png';
