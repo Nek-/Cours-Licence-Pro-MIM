@@ -20,19 +20,29 @@ img.onload = function() {
         ctx.drawImage(img, 100+100*Math.cos(i), 100+100*Math.sin(i));
     }
     */
+    
+    /*
     var pas = Math.PI * 2 / 10;
     // Spirale de ouf tavu
     for (var i = 0; i <= 2 * Math.PI; i = i + pas) {
         ctx.drawImage(img, 100+i*30*Math.cos(i), 100+i*30*Math.sin(i));
     }
-    
-    /*
-    // Lemniscate de bernouicci
-    var a = 20;
-    for (var t = 0; t < 2*Math.PI; t += 0.5) {
-        ctx.drawImage(img, 100+100*Math.cos(i), 100+100*Math.sin(i));
-    }
     */
+
+/*
+// Ceci ne fonctionne pas.
+    // Lemniscate de bernouicci
+    // x = (a * sqrt(2))*((t(1+t²))/(1+t^4))
+    // x = (a * sqrt(2))*((t(1-t²))/(1+t^4))
+    var a = 100;
+    for (var t = 0; t < 4*Math.PI; t += 0.2) {
+        ctx.drawImage(
+            img,
+            50+a*Math.sqrt(2)*((t*(1+t*t))/(1+t*t*t*t)),
+            50+a*Math.sqrt(2)*((t*(1-t*t))/(1+t*t*t*t))
+        );
+    }
+*/
 }
 
 img.src = 'images/coquelicot.png';
