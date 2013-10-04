@@ -31,18 +31,18 @@ img.onload = function() {
 
 /*
 // Ceci ne fonctionne pas.
-    // Lemniscate de bernouicci
+    // Lemniscate de bernouilli
     // x = (a * sqrt(2))*((t(1+t²))/(1+t^4))
-    // x = (a * sqrt(2))*((t(1-t²))/(1+t^4))
+    // y = ?
     var a = 100;
-    for (var t = 0; t < 4*Math.PI; t += 0.2) {
+    for (var t = 0; t < 50*Math.PI; t += 0.2) {
         ctx.drawImage(
             img,
-            50+a*Math.sqrt(2)*((t*(1+t*t))/(1+t*t*t*t)),
-            50+a*Math.sqrt(2)*((t*(1-t*t))/(1+t*t*t*t))
+            100+a*Math.sqrt(2)*((t*(1+t*t))/(1+t*t*t*t)),
+            100+a*Math.sqrt(2)*((t-t*t*t)/(1+t*t*t*t))
         );
     }
-*/
+//*/
 }
 
 img.src = 'images/coquelicot.png';
