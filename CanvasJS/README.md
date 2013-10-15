@@ -112,7 +112,7 @@ définir un chemin pour avoir un rendu correct lors de la définition de plusieu
 
 ### drawImage
 
-```
+```javascript
 ctx.drawImage(image, x, y);
 ```
 
@@ -132,3 +132,15 @@ img.onload = function() {
 }
 img.src = 'images/coquelicot.png';
 ```
+
+### imageData
+
+```javascript
+getImageData(x, y, width, height)
+```
+La méthode getImageData retourne un objet "ImageData" qui contient les
+propriétés suivantes:
+
+* `ImageData.width`, la largeur du data (non représentatif de l'attribut data)
+* `ImageData.height`, la hautueur du data (non représentatif de l'attribut data)
+* `ImageData.data`, un tableau à une dimension représentant l'image, chaque pixel est représenté par 4 cases
