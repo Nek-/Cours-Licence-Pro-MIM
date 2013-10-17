@@ -14,14 +14,14 @@ class Bike {
      */
     public static void main(String[] args)
     {
-        Velo v = new Velo();
+        Bike v = new Bike();
     }
     
     /**
      * Construit la classe vélo
      * en demandant les informations à l'utilisateur
      */
-    public Velo()
+    public Bike()
     {
         Scanner sc = new Scanner(System.in);
         
