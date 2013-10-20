@@ -9,5 +9,9 @@ cd Java
 # Créer un dossier séparé pour les fichiés précompilés
 # (facultatif mais propre)
 mkdir build/
-javac -d build/ src/velo/Bike.java
+
+# Compile dans le dossier "build"
+# En utilisant les fichiers contenus dans src
+# Avec la classe principale "src/velo/Bike.java"
+javac -d build/ -sourcepath src/ src/velo/Bike.java
 ```

@@ -37,8 +37,8 @@ class Hour {
         // La méthode static Integer.parseInt() permet de transformer les
         // chaînes de caractères en nombres
         return new Hour(
-            hourSplitted[0],
-            hourSplitted[1]
+            Integer.parseInt(hourSplitted[0]),
+            Integer.parseInt(hourSplitted[1])
         );
     }
     
@@ -66,7 +66,7 @@ class Hour {
     {
         // On calcule la diff directement en minutes, c'est plus simple
         int currentMinutes = this.hour * 60 + this.minute,
-            otherMinutes   = otherHour * 60 * otherHour.minute;
+            otherMinutes   = otherHour.hour * 60 * otherHour.minute;
         
         return Math.abs(currentMinutes - otherMinutes);
     }

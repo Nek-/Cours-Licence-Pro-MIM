@@ -39,16 +39,16 @@ class Bike {
         
         // Demande de l'heure de départ
         System.out.println("Entrez une heure de départ :");
-        this.start = Hour.createHourFromString(Scanner.nextLine());
+        this.start = Hour.createHourFromString(sc.nextLine());
 
         // Demande de l'heure d'arrivée
         System.out.println("Entrez une heure d'arrivée :");
-        this.end   = Hour.createHourFromString(Scanner.nextLine());
+        this.end   = Hour.createHourFromString(sc.nextLine());
         
         // Demande de l'âge
         // Note: le programme va planter si l'utilisateur ne rentre pas un nombre
         System.out.println("Entrez votre âge :");
-        this.age   = Scanner.nextInt();
+        this.age   = sc.nextInt();
     }
     
     /**
@@ -57,7 +57,7 @@ class Bike {
     public float calculate()
     {
         // float représente un nombre à virgule
-        float res = 0.0;
+        float res = 0.0f;
         
         if (this.start.before(new Hour(7,0))) {
             
@@ -67,31 +67,31 @@ class Bike {
                 // diff retourne un entier, pour préciser que le résultat doit
                 // être un nombre à virgule on utilise des nombres à virgules
                 // dans l'opération
-                res = this.start.diff(this.end) / 60.0 * 1.25;
+                res = this.start.diff(this.end) / 60.0f * 1.25f;
             } else {
-                res += this.start.diff(new Hour(7,0)) / 60.0 * 1.25;
+                res += this.start.diff(new Hour(7,0)) / 60.0f * 1.25f;
             }
         }
         
         if (this.end.before(new Hour(17,0))) {
             if (this.start.after(new Hour(7,0))) {
-                res = this.start.diff(this.end) / 60.0 * 1.5;
+                res = this.start.diff(this.end) / 60.0f * 1.5f;
             } else {
-                res += this.end.diff(new Hour(7,0)) / 60.0 * 1.5;
+                res += this.end.diff(new Hour(7,0)) / 60.0f * 1.5f;
             }
         }
         
         if (this.end.after(new Hour(17,0))) {
             if (this.start.after(new Hour(17,0))) {
-                res = this.start.diff(this.end) / 60.0 * 1.25;
+                res = this.start.diff(this.end) / 60.0f * 1.25f;
             } else {
-                res += this.start.diff(new Hour(17,0)) / 60.0 * 1.25;
+                res += this.start.diff(new Hour(17,0)) / 60.0f * 1.25f;
             }
         }
         
         // La promotion pour les jeunes:
         if (this.age < 30 || this.age > 75) {
-            res = res * 0.8;
+            res = res * 0.8f;
         }
         
         return res;
