@@ -68,12 +68,14 @@ class Bike {
                 // être un nombre à virgule on utilise des nombres à virgules
                 // dans l'opération
                 res = this.start.diff(this.end) / 60.0f * 1.25f;
+                
+                System.out.println(res);
             } else {
-                res += this.start.diff(new Hour(7,0)) / 60.0f * 1.25f;
+                res = this.start.diff(new Hour(7,0)) / 60.0f * 1.25f;
             }
         }
         
-        if (this.end.before(new Hour(17,0))) {
+        if (this.end.before(new Hour(17,1)) && this.end.after(new Hour(7,0))) {
             if (this.start.after(new Hour(7,0))) {
                 res = this.start.diff(this.end) / 60.0f * 1.5f;
             } else {

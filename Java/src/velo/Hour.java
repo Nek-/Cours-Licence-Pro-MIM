@@ -66,7 +66,9 @@ class Hour {
     {
         // On calcule la diff directement en minutes, c'est plus simple
         int currentMinutes = this.hour * 60 + this.minute,
-            otherMinutes   = otherHour.hour * 60 * otherHour.minute;
+            otherMinutes   = otherHour.hour * 60 + otherHour.minute;
+        
+        //System.out.println("Heure1 : " + this.toString() + "; autre heure: " + otherHour.toString());
         
         return Math.abs(currentMinutes - otherMinutes);
     }
@@ -100,5 +102,20 @@ class Hour {
             this.hour > otherHour.hour ||
             (this.hour == otherHour.hour && this.minute > otherHour.minute)
         ;
+    }
+    
+    /**
+     * Méthode classique en java dont hérite tous les objets (de la classe "Object")
+     * qui permet d'écrire un objet sous forme de chaîne
+     * cf doc http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html#toString()
+     * 
+     * Une meilleure méthode serait de vérifier qu'il y a bien deux nombres et d'ajouter
+     * le zéro au début des nombres (là ça affiche "6h2" pour "6h02", détail.
+     * 
+     * @return String
+     */
+    public String toString()
+    {
+        return this.hour + "h" + this.minute;
     }
 }
