@@ -1,5 +1,9 @@
+// Similaire aux "namespaces" en PHP
+// Correspond au nom du dossier
 package velo;
 
+// Similaire au "use" en php, dans le cadre des namespaces
+// peut être vu comme un "include"
 import java.util.Scanner;
 
 /**
@@ -49,17 +53,17 @@ class Bike {
     
     /**
      * Calcule le prix que va payer l'utilisateur
-     */'
+     */
     public float calculate()
     {
         // float représente un nombre à virgule
         float res = 0.0;
         
-        if (this.start.before(new Hour(7,0)) {
+        if (this.start.before(new Hour(7,0))) {
             
             // Note: ne pas utiliser 01, cela serait compris comme un nombre "octal"
             // et pas "décimal" (ce qui n'est pas grave de 1 à 7)
-            if (this.end.before(new Hour(7,1)) {
+            if (this.end.before(new Hour(7,1))) {
                 // diff retourne un entier, pour préciser que le résultat doit
                 // être un nombre à virgule on utilise des nombres à virgules
                 // dans l'opération
@@ -73,7 +77,7 @@ class Bike {
             if (this.start.after(new Hour(7,0))) {
                 res = this.start.diff(this.end) / 60.0 * 1.5;
             } else {
-                res += this.end.diff(new Hour(7,0) / 60.0 * 1.5;
+                res += this.end.diff(new Hour(7,0)) / 60.0 * 1.5;
             }
         }
         

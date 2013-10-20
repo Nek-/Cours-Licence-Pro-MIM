@@ -3,6 +3,8 @@ package velo;
 /**
  * Classe permettant de simplifier le traitement
  * des heures
+ * 
+ * Grace à cette classe, la classe "Bike" sera beaucoup simplifiée
  */
 class Hour {
     
@@ -58,12 +60,15 @@ class Hour {
      * en paramètres
      * 
      * @param Hour otherHour
-     * @return int toujours positif représentant la différence entre les deux heures
+     * @return int toujours positif représentant la différence entre les deux heures en minutes
      */
     public int diff(Hour otherHour)
     {
-        // TODO
-        return 0;
+        // On calcule la diff directement en minutes, c'est plus simple
+        int currentMinutes = this.hour * 60 + this.minute,
+            otherMinutes   = otherHour * 60 * otherHour.minute;
+        
+        return Math.abs(currentMinutes - otherMinutes);
     }
     
     /**
@@ -74,8 +79,12 @@ class Hour {
      */
     public boolean before(Hour otherHour)
     {
-        // TODO
-        return false;
+        // Une condition retourne toujours "true" ou "false"
+        // il est donc inutile de faire un if
+        return
+            this.hour < otherHour.hour ||
+            (this.hour == otherHour.hour && this.minute < otherHour.minute)
+        ;
     }
     
     
@@ -87,7 +96,9 @@ class Hour {
      */
     public boolean after(Hour otherHour)
     {
-        // TODO
-        return false;
+        return
+            this.hour > otherHour.hour ||
+            (this.hour == otherHour.hour && this.minute > otherHour.minute)
+        ;
     }
 }
